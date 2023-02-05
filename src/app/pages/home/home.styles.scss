@@ -1,0 +1,10 @@
+.HomePage {
+  p {
+    line-height: 32px;
+    color: var(--color-quaternary-100);
+    mark {
+      background: var(--color-quinary-main) !important;
+      color: #fff !important;
+    }
+  }
+}

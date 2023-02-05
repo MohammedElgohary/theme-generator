@@ -1,0 +1,56 @@
+import styled from "styled-components";
+import { FlexInterface } from "../components.types";
+
+export const Flex = styled("div")<FlexInterface>(
+  {
+    display: "flex",
+  },
+  ({
+    justifyItems,
+    justifyContent,
+    justifySelf,
+    alignSelf,
+    flexDirection,
+    flexGrow,
+    alignItems,
+    alignContent,
+    gap,
+    fullWidth,
+    flexWrap,
+    maxWidth,
+    color,
+    xs,
+    sm,
+    md,
+    lg,
+    xl,
+    xxl,
+    hd,
+    onRTL,
+    onLTR,
+  }) => ({
+    flexDirection: flexDirection || "row",
+    justifyContent: justifyContent || "initial",
+    justifyItems: justifyItems || "initial",
+    justifySelf: justifySelf || "initial",
+    alignSelf: alignSelf || "initial",
+    alignItems: alignItems || "initial",
+    alignContent: alignContent || "initial",
+    gap: gap || "15px",
+    flexGrow: fullWidth ? "1" : flexGrow || "initial",
+    width: fullWidth || maxWidth ? "100%" : "initial",
+    flexWrap: flexWrap || "wrap",
+    maxWidth: maxWidth || "initial",
+    color: color || undefined,
+    "@media screen and (max-width: 280px)": { ...xs } || {},
+    "@media screen and (max-width: 576px)": { ...sm } || {},
+    "@media screen and (max-width: 768px)": { ...md } || {},
+    "@media screen and (max-width: 992px)": { ...lg } || {},
+    "@media screen and (max-width: 1200px)": { ...xl } || {},
+    "@media screen and (min-width: 1360px)": { ...xxl } || {},
+    "@media screen and (min-width: 1900px)": { ...hd } || {},
+
+    "body[dir=rtl] &": { ...onRTL } || {},
+    "body[dir=ltr] &": { ...onLTR } || {},
+  })
+);
