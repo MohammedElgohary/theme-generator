@@ -1,4 +1,4 @@
-import { SyntheticEvent, useState } from "react";
+import { useState } from "react";
 import { Flex } from "../../../design/components/Grid/Flex";
 import { colorKeys } from "../../../../utils/utils.types";
 import { generateTheme } from "../../../../utils/generateTheme";
@@ -29,10 +29,7 @@ export default function ColorSetter({ type }: ColorSetterInterface) {
    * @param e {SyntheticEvent}
    * @param key {string}
    */
-  const onChangeColor = (
-    e: SyntheticEvent<HTMLInputElement>,
-    key?: colorKeys
-  ) => {
+  const onChangeColor = (e: React.ChangeEvent, key?: colorKeys) => {
     const target = e.target as HTMLInputElement,
       value = target.value;
 
